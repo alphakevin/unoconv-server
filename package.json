@@ -1,0 +1,39 @@
+{
+  "name": "unoconv-server",
+  "version": "0.1.0",
+  "description": "Restful server for unoconv",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "node ./lib start",
+    "nodemon": "nodemon --delay 1000ms -i src ./lib start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alphakevin/unoconv-server.git"
+  },
+  "keywords": [
+    "unoconv",
+    "listener",
+    "office",
+    "convert"
+  ],
+  "author": "Alvin Ma <get.so.smart@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alphakevin/unoconv-server/issues"
+  },
+  "homepage": "https://github.com/alphakevin/unoconv-server#readme",
+  "dependencies": {
+    "content-disposition": "^0.5.2",
+    "express": "^4.16.2",
+    "lodash": "^4.17.4",
+    "mime-types": "^2.1.17",
+    "multer": "^1.3.0",
+    "pad": "^2.0.3",
+    "uuid": "^3.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.14.3"
+  }
+}
