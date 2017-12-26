@@ -1,6 +1,6 @@
 # unoconv-server
 
-A simple restful server for unoconv
+A simple RESTful wrapper for [unoconv](https://github.com/dagwieers/unoconv)
 
 ## Install
 
@@ -61,6 +61,13 @@ If output name is provided, a `Content-Disposition` header will be send for the 
 ## Notice
 
 This is a simple server and it does NOT provide authorization method, please do not use it for public directly.
+
+## Related
+
+* [unoconv](https://github.com/gfloyd/node-unoconv) A node.js wrapper for converting documents with unoconv.
+* [unoconv2](https://github.com/HAASLEWER/unoconv2) A version forked from node-uniconv which has better error handling.
+
+Both of the two use Buffer for storing the output file in the memory but not stream.
 
 ## License
 
