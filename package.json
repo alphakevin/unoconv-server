@@ -2,6 +2,9 @@
   "name": "unoconv-server",
   "version": "0.1.0",
   "description": "Restful server for unoconv",
+  "engines" : {
+    "node" : ">=6.12.2"
+  },
   "main": "lib/index.js",
   "scripts": {
     "start": "node ./lib start",
