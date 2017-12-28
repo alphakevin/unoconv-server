@@ -46,7 +46,7 @@ const expores = require('express');
 const unoconv = require('unoconv-server');
 
 const app = express();
-app.use('/unoconv', unoconv);
+app.use('/unoconv', unoconv());
 // ... your own express routes
 app.listen(3000);
 ```
