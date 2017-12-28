@@ -43,17 +43,31 @@ When the server starts, it will start a [listener](https://github.com/dagwieers/
 for better performance, the listener will be stopped together with the server.
 
 The server provides a similar interface like unoconv, you can simply remove `--` or `-` and use `/`
-instead of white-space between the arguments, or after `/convert` path.
+instead of white-space between the arguments, all after `/convert`.
 
-You can upload file by `multipart/form-data` format or RAW format (with `Content-Type` and `Content-Disposition` header)
+```http
+POST /convert/format/<format>[/output/<filename>] HTTP/1.1
+```
 
-The converted file will be directly output from the HTTP response body.
+You can upload file by either of the following method:
 
-If output name is provided, a `Content-Disposition` header will be send for the new filename
+* `multipart/form-data` upload with a `file` field of the file to be converted.
+* RAW upload a file in HTTP body with `Content-Type` and `Content-Disposition` header provided.
 
-# Example
+If the `/output/<value>` option is provided, the `Content-Disposition` header will contain the new filename.
 
-Here we take CURL for example:
+The converted document will be directly output from the HTTP response body.
+
+## Environment Variables
+
+| Name | Description |
+| ---- | ----------- |
+| `HOSTNAME` | For server listening hostname |
+| `PORT` | For server listening port |
+
+## Example
+
+Get help in command-line, or visit `http://127.0.0.1:4000/help`, here we take cURL for example:
 
 ```bash
 $ ./unoconv-server help converter
