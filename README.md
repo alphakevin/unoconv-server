@@ -1,6 +1,6 @@
 # unoconv-server
 
-A simple RESTful wrapper for [unoconv](https://github.com/dagwieers/unoconv)
+A simple RESTful server for converting documents using [unoconv](https://github.com/dagwieers/unoconv)
 
 ## Install
 
@@ -25,6 +25,20 @@ Get command line help
 ./unoconv-server --help
 ```
 
+```
+unoconv-server, a simple RESTful server for converting documents
+  please visit https://github.com/alphakevin/unoconv-server
+
+usage: unoconv-server <command> <options>
+
+commands:
+  start [<hostname>[:<port>]]  start the server, default to localhost:4000
+  help converter             get converter help
+
+options:
+  -h, --help                 print this help message
+```
+
 Use in your application
 
 ```javascript
@@ -32,7 +46,7 @@ const expores = require('express');
 const unoconv = require('unoconv-server');
 
 const app = express();
-app.use('/converter', unoconv);
+app.use('/unoconv', unoconv);
 // ... your own express routes
 app.listen(3000);
 ```
@@ -67,24 +81,33 @@ The converted document will be directly output from the HTTP response body.
 
 ## Example
 
-Get help in command-line, or visit `http://127.0.0.1:4000/help`, here we take cURL for example:
+Visit `http://127.0.0.1:4000/help`, or get help in command-line:
 
 ```bash
-$ ./unoconv-server help converter
-unoconv-server
-  visit project https://github.com/alphakevin/unoconv-server for more information
+./unoconv-server help converter
+```
 
-usage:
-  upload with multipart/form-data:
-    curl -F file=@example.docx http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
-  upload raw:
-    curl -X POST \
-      -T "example.docx" \
-      -H "Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document" \
-      -H "Content-Disposition: attachment; filename="example.docx"" \
-      http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
+Hear we use cURL for examples.
 
-converter options:
+### Uploading with `multipart/form-data`
+
+```bash
+curl -F file=@example.docx http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
+```
+
+### Uploading RAW binary data
+
+```bash
+curl -X POST \
+-T "example.docx" \
+-H "Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document" \
+-H "Content-Disposition: attachment; filename="example.docx"" \
+http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
+```
+
+### Converting options:
+
+```
   /e, /export/<value>     set export filter options
   /f, /format/<value>     specify the output format
   /F, /field/<value>      replace user-defined text field with value
