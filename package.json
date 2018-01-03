@@ -1,6 +1,6 @@
 {
   "name": "unoconv-server",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Restful server for unoconv",
   "engines" : {
     "node" : ">=6.12.2"
