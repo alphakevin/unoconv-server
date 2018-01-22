@@ -116,6 +116,14 @@ http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
       /password/<value>   provide a password to decrypt the document
 ```
 
+## Playing with Docker
+
+`unoconv-server` can start from docker without source code or npm installed:
+
+```bash
+docker run -d -p 4000:4000 --name unoconv alphakevin/unoconv-server
+```
+
 ## Notice
 
 This is a simple server and it does not include authorization method, please take your own risk
