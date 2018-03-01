@@ -6,7 +6,7 @@ A simple RESTful server for converting documents using [unoconv](https://github.
 
 [unoconv](https://github.com/dagwieers/unoconv) is required for converting documents
 
-```bash
+```shell
 # apt-get install unoconv
 npm install unoconv-server
 ```
@@ -15,17 +15,17 @@ npm install unoconv-server
 
 Start a server in command-line:
 
-```bash
+```shell
 ./unoconv-server start
 ```
 
 Get command line help
 
-```bash
+```shell
 ./unoconv-server --help
 ```
 
-```
+```shell
 unoconv-server, a simple RESTful server for converting documents
   please visit https://github.com/alphakevin/unoconv-server
 
@@ -83,21 +83,21 @@ The converted document will be directly output from the HTTP response body.
 
 Visit `http://127.0.0.1:4000/help`, or get help in command-line:
 
-```bash
+```shell
 ./unoconv-server help converter
 ```
 
-Hear we use cURL for examples.
+Here we use cURL for examples.
 
 ### Uploading with `multipart/form-data`
 
-```bash
+```shell
 curl -F file=@example.docx http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
 ```
 
 ### Uploading RAW binary data
 
-```bash
+```shell
 curl -X POST \
 -T "example.docx" \
 -H "Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document" \
@@ -107,7 +107,7 @@ http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
 
 ### Converting options:
 
-```
+```shell
   /e, /export/<value>     set export filter options
   /f, /format/<value>     specify the output format
   /F, /field/<value>      replace user-defined text field with value
@@ -120,7 +120,7 @@ http://127.0.0.1:4000/convert/format/pdf/output/newname.pdf > result.pdf
 
 `unoconv-server` can start from docker without source code or npm installed:
 
-```bash
+```shell
 docker run -d -p 4000:4000 --name unoconv alphakevin/unoconv-server
 ```
 
