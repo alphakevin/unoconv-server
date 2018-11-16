@@ -1,9 +1,9 @@
 {
   "name": "unoconv-server",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Restful server for unoconv",
-  "engines" : {
-    "node" : ">=6.12.2"
+  "engines": {
+    "node": ">=6.12.2"
   },
   "main": "lib/index.js",
   "scripts": {
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/alphakevin/unoconv-server#readme",
   "dependencies": {
+    "async-middleware": "^1.2.1",
     "content-disposition": "^0.5.2",
     "express": "^4.16.2",
     "lodash": "^4.17.4",
