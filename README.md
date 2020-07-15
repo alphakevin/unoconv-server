@@ -136,6 +136,7 @@ if you want to deploy it public directly.
 * [unoconv](https://github.com/gfloyd/node-unoconv) A node.js wrapper for converting documents with unoconv.
 * [unoconv2](https://github.com/HAASLEWER/unoconv2) A version forked from node-uniconv which has better error handling.
 * [tfk-api-unoconv](https://github.com/zrrrzzt/tfk-api-unoconv) Unoconv as a webservice together with docker image.
+* [filepreview](https://github.com/schul-cloud/filepreview) File preview image as a service
 
 ## License
 
